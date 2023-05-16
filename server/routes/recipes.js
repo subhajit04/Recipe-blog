@@ -11,6 +11,8 @@ router.get("/", async (req, res) => {
     const result = await RecipesModel.find({});
     res.status(200).json(result);
   } catch (err) {
+    console.log("1 error: ");
+    console.log(err);
     res.status(500).json(err);
   }
 });
