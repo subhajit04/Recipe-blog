@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   } catch (err) {
     console.log("1 error: ");
     console.log(err);
-    res.status(500).json(err);
+    res.status(501).json(err);
   }
 });
 
