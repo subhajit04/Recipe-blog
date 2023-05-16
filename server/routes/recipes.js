@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 // Create a new recipe
-router.post("/", verifyToken, async (req, res) => {
+router.post("/post", verifyToken, async (req, res) => {
   const recipe = new RecipesModel({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
@@ -59,7 +59,7 @@ router.get("/:recipeId", async (req, res) => {
 });
 
 // Save a Recipe
-router.put("/", async (req, res) => {
+router.put("/save", async (req, res) => {
   const recipe = await RecipesModel.findById(req.body.recipeID);
   const user = await UserModel.findById(req.body.userID);
   try {
